@@ -1,0 +1,87 @@
+$material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
+@import '~material-design-icons-iconfont/src/material-design-icons';
+@import '~vuetify/dist/vuetify.min.css';
+
+.widget.finance-questionnaries {
+    max-width: 1068px;
+    margin: 0 auto 10px;
+}
+
+#qfp-app {
+    .application--wrap {
+        min-height: auto;
+        min-width: 280px;
+    }
+    input {
+        border: none;
+    }
+    hr.v-divider {
+        display: block;
+        flex: 1 1 0px;
+        max-width: 100%;
+        height: 0;
+        max-height: 0;
+        border-style: solid;
+        border-width: thin 0 0;
+        -webkit-transition: inherit;
+        transition: inherit;
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+    .v-card {
+        .v-card__text {
+            min-height: 250px;
+        }
+    }
+    .v-input__slot {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: none;
+        &.v-btn {
+            text-decoration: none;
+        }
+    }
+    .v-overflow-btn .v-select__slot {
+        height: 35px;
+        background: #1976d2;
+        input {
+            background: #1976d2;
+            color: #fff;
+        }
+    }
+    .theme--dark.v-icon {
+        color: #fff;
+        &.primary--text {
+            color: #fff !important;
+        }
+    }
+    .v-text-field .v-input__append-inner {
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .questionnaireWidget {
+        .dropdown {
+            min-width: 110px;
+            margin-top: 11px;
+            &.v-text-field {
+                padding-top: 0;
+            }
+        }
+    }
+    .v-card__text {
+        position: relative;
+    }
+    .label {
+        &.scale {
+            position: absolute;
+            top: 100px;
+            &.min {
+                left: 20px;
+            }
+            &.max {
+                right: 20px;
+            }
+        }
+    }
+}
