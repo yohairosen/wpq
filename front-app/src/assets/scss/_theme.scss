@@ -1,0 +1,95 @@
+.v-input {
+    flex: none!important;
+    // background: transparent!important;
+
+    // *{
+    //     background: transparent!important;
+    // }
+}
+
+i.v-icon.material-icons.theme--dark.primary--text {
+    color: #606060!important;
+
+}
+#qfp-app .v-text-field .v-input__append-inner{
+
+    margin: 0;
+    left: -21px;
+    position: relative;
+
+}
+.theme--dark.v-label {
+    color: #606060!important;
+}
+.dropdown.v-text-field {
+    background: transparent!important;
+    *{
+
+        background: transparent!important;
+    }
+}
+
+.v-overflow-btn .v-select__selections{
+    width: auto!important;
+} 
+
+.theme--dark.v-btn, .v-toolbar__title {
+    background: transparent !important;
+    color: #606060!important;
+}
+
+.theme--light.application {
+    background: white!important;
+}
+nav.v-toolbar.theme--light {
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.2);
+}
+.questionnaire {
+    max-width: 500px;
+    margin: 0 auto 10px;
+    margin-top: 60px;
+}
+.v-stepper__step, .v-stepper__step--active, .v-stepper__step--editable{
+    &:hover {
+        background: transparent!important;
+    }
+}
+.v-stepper__step--active .v-stepper__step__step, .v-stepper__step--complete .v-stepper__step__step{
+    // box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.2)!important;
+    background: #4db2ec!important;
+    .v-icon.material-icons.theme--light {
+        display: none!important;
+    }
+   
+    
+}
+.v-ripple__container {
+    display: none!important;
+}
+
+.ml-0.v-btn.theme--light.primary{
+    background: #4db2ec!important;
+    box-shadow: none!important;
+}
+.question.theme--light.v-card  {
+
+        // background-color: #f8f8f8!important;
+
+
+
+    .v-toolbar {
+
+        background-color: white !important;
+        color: black!important;
+        box-shadow: none!important;
+    }
+}
+
+
+#qfp-app .questionnaireWidget .dropdown.v-text-field {
+
+    // right: 0;
+    // max-width: 100px;
+    // position: absolute;
+    background: white;
+}
