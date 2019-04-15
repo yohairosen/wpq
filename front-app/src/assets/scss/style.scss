@@ -11,10 +11,19 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
 }
 .v-menu__content.theme--light.v-autocomplete__content {
     box-shadow: 0px 9px 9px -7px rgba(0,0,0,0.1)!important;
-    top: 64px!important;
+    top: 48px !important;
+    @media screen and (max-width: 767px) {
+        left: 5px !important;
+    }
+    @media screen and (min-width: 958px) {
+        top: 64px!important;
+    }
 }
 .widget.finance-questionnaries {
-    top: -49px;
+    top: -30px;
+    @media screen and (min-width: 768px) {
+        top: -49px;
+    }
     position: relative;
     z-index: 100000;
     margin-bottom: 10px !important;
@@ -124,26 +133,35 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
         }
 
         &.active-questionnaire {
-            color: #4db2ec !important;
+            color: #5BF4A3 !important;
         }
     }
 }
 
-.mobile-only {
+.v-input.mobile-only {
     @media screen and (min-width: 768px) {
         display: none;
     }
 }
 
-.desktop-only {
+.v-input.desktop-only {
     display: none;
     @media screen and (min-width: 768px) {
         display: flex;
     }
 }
 
-.result .v-toolbar__title {
-    color: #fff !important;
+.result .v-toolbar {
+    box-shadow: none !important;
+    background: none !important;
+
+    .v-toolbar__content {
+        margin-left: 0 !important;
+    }
+
+    .v-toolbar__title {
+        color: #606060!important;
+    }
 }
 
 .v-stepper__wrapper {
@@ -159,10 +177,16 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
     .primary {
         background-color: #5BF4A3 !important;
         border-color: #5BF4A3 !important;
+    }
+}
 
-        &.v-btn {
-            background-color: #1976d2 !important;
-            border-color: #1976d2 !important;
-        }
+.questionnaire .ml-0.v-btn.theme--light.primary {
+    background-color: #5BF4A3 !important;
+    border-color: #5BF4A3 !important;
+}
+
+.questionnaire {
+    .v-stepper__step--active .v-stepper__step__step, .v-stepper__step--complete .v-stepper__step__step {
+        background-color: #5BF4A3 !important;
     }
 }

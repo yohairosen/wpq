@@ -96,7 +96,9 @@ nav.v-toolbar.theme--light {
 .questionnaire {
 
     .v-stepper {
-        box-shadow: none !important;
+        @media screen and (max-width: 767px) {
+            box-shadow: none !important;
+        }
         width: auto;
         display: inline-block;
         margin: 0 auto;
@@ -121,7 +123,9 @@ nav.v-toolbar.theme--light {
     .v-stepper__header {
         max-width: 100%;
         margin: 0 auto;
-        border-bottom: 1px solid #ccc !important
+        @media screen and (max-width: 767px) {
+            border-bottom: 1px solid #ccc !important
+        }
     }
 
 }
