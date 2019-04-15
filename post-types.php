@@ -124,36 +124,6 @@ function toplevel_page_game_test_stylesheet()
 }
 
 
-/**
- * Add custom taxonomy for Finance Product types
- */
-//function add_product_categories()
-//{
-//    register_taxonomy('product-categories', 'finproducts', array(
-//        'hierarchical' => true,
-//        'labels' => array(
-//            'name' => _x('Categories', 'taxonomy general name'),
-//            'singular_name' => _x('Category', 'taxonomy singular name'),
-//            'search_items' => __('Search Categories'),
-//            'all_items' => __('All Categories'),
-//            'parent_item' => __('Parent Category'),
-//            'parent_item_colon' => __('Parent Category:'),
-//            'edit_item' => __('Edit Category'),
-//            'update_item' => __('Update Category'),
-//            'add_new_item' => __('Add New Category'),
-//            'new_item_name' => __('New Category Name'),
-//            'menu_name' => __('Categories'),
-//        ),
-//        'rewrite' => array(
-//            'slug' => 'product-categories',
-//            'with_front' => false,
-//            'hierarchical' => true
-//        ),
-//    ));
-//}
-
-//add_action('init', 'add_product_categories', 0);
-
 
 // REST API CUSTOMIZATIONS
 
@@ -229,63 +199,13 @@ function getPostTypeCountFiltered($post_type, $get)
 }
 
 
-/*
-function check_values($post_ID, $post_after, $post_before){
-    $fieldsP = get_fields($post_ID);
-    $questionnairId = $fieldsP["questionnair"] ? $fieldsP["questionnair"] : null;
-
-    if($questionnairId) {
-//        $fieldsQ = get_field_objects($questionnairId);
-        $metaQ = get_post_meta($questionnairId);
-//        acf_duplicate_fields($fieldsQ, $post_ID);
-        foreach ($metaQ as $meta) {
-            $field = $meta;
-        }
-    }
-
-}
-
-add_action( 'post_updated', 'check_values', 10, 3 ); //don't forget the last argument to allow all three arguments of the function*/
-
-/*function select_non_ajax_choices( $field ) {
-
-//    $postId =  get_the_ID() ?  get_the_ID() : $_POST['post_id'];
-
-    // reset choices
-    $field['choices'] = array();
-
-//    $questionnairId = get_field('questionnair', $postId );
-//    if($questionnairId) {
-//        $fieldsQ = get_field_objects($questionnairId);
-//        $metaQ = get_post_meta($questionnairId);
-//        acf_duplicate_fields($fieldsQ, $post_ID);
-//        $questions = get_fields($questionnairId);
-//        foreach ($questions['question'] as $question) {
-//            $field['choices'][$question['field']] = $question['field'];
-//        }
-//    }
-
-    $query = new WP_Query(array(
-        'post_type' => 'questionnairies',
-        'post_status' => 'publish',
-        'posts_per_page' => -1,
-    ));
-    while ($query->have_posts()) {
-        $query->the_post();
-        $post_id = get_the_ID();
-        $field['choices'][$post_id] = get_the_title();
-    }
-
-
-    return $field;
-}*/
-//add_filter('acf/load_field/name=questionnair', 'select_non_ajax_choices');
-
-
-//add_filter('acf/prepare_field/name=fields', 'select_non_ajax_choices');
-
 
 function product_add_fields() {
+
+    global $post;
+
+    $currentProductTypeId = $_GET["post"];
+
     $query = new WP_Query(array(
         'post_type' => 'questionnairies',
         'posts_per_page' => -1,
@@ -298,6 +218,8 @@ function product_add_fields() {
 
 
         $productTypeId = get_field('products_type', $questionaire->ID);
+        if(!empty($currentProductTypeId) && $currentProductTypeId != $productTypeId ) continue; // resolve only questionairy for the selected product type
+
         if ($productTypeId) {
             $questions = get_fields($questionaire->ID);
             $fieldGroups[$questionaire->ID]['location'] [] = array(

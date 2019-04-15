@@ -21,7 +21,7 @@
                                 return-object
                                 @change="selectQuestionnaireDropdown"
                                 class="ml-1 dropdown"
-                                segmented
+                                v-model="selectedQuestionnaire"
                 ></v-overflow-btn>
 
             </v-toolbar>
@@ -36,7 +36,9 @@
     export default {
         name: 'QuestionnaireWidget',
         data() {
-            return {}
+            return {
+              selectedQuestionnaire: {text: 'More', value: ''}
+            }
         },
         computed: {
             questionnairies() {
@@ -66,12 +68,16 @@
             }
         },
         methods: {
-            selectQuestionnaire(id) {
+            selectQuestionnaire(id, resetSelect = true) {
                 this.$emit('restart');
                 this.$store.dispatch('SET_ACTIVE_QUESTIONNAIRE', id);
+
+                if(resetSelect) {
+                  this.selectedQuestionnaire = {text: 'More', value: ''}
+                }
             },
             selectQuestionnaireDropdown(selected) {
-                this.selectQuestionnaire(selected.value)
+                this.selectQuestionnaire(selected.value, false)
             }
         }
     }

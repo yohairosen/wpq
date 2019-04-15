@@ -60,8 +60,18 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
     }
     .v-overflow-btn .v-select__slot {
         height: 35px;
+        text-transform: uppercase;
         // background: #606060;
-        color: #606060;;
+        color: #606060;
+        label,
+        .v-select__selection {
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 500;
+            color: #606060;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
         input {
             // display: none;
             width: 0;
