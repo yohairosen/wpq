@@ -17,8 +17,7 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
     top: -49px;
     position: relative;
     z-index: 100000;
-    // max-width: 1068px;
-    // margin: 0 auto 10px;
+    margin-bottom: 10px !important;
 }
 // .theme--dark {
 //     background: red!important;
@@ -116,4 +115,54 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
     }
 }
 
+.v-toolbar__content {
+    .v-btn {
+        display: none;
 
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+
+        &.active-questionnaire {
+            color: #4db2ec !important;
+        }
+    }
+}
+
+.mobile-only {
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.result .v-toolbar__title {
+    color: #fff !important;
+}
+
+.v-stepper__wrapper {
+    .accent--text, .primary--text {
+        color: #5BF4A3 !important;
+        caret-color: #5BF4A3 !important;
+
+        &.v-btn {
+            color: #fff !important;
+        }
+    }
+
+    .primary {
+        background-color: #5BF4A3 !important;
+        border-color: #5BF4A3 !important;
+
+        &.v-btn {
+            background-color: #1976d2 !important;
+            border-color: #1976d2 !important;
+        }
+    }
+}

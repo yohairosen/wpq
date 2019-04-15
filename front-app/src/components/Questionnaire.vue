@@ -73,7 +73,7 @@
 
                     <v-stepper-content
                             :step="questionnaire.question.length+1"
-                            class="pl-0 pr-0"
+                            class="pl-0 pr-0 questionnaire-results"
                     >
                         <v-card class="ml-0 mr-0 mt-0 pl-4 pr-4 elevation-0 result" color="white lighten-1" v-if="resultProduct">
                             <v-toolbar color="blue darken-2" class="mb-4" dark>

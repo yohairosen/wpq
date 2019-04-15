@@ -8,6 +8,7 @@
                            :key="index"
                            v-if="index < buttonsNumber"
                            class="ml-1 elevation-0"
+                           :class="{ 'active-questionnaire': questionnaire.id == $store.state.activeQuestionnaireId }"
                     >{{ questionnaire | button_label }}
                     </v-btn>
                 </template>
@@ -20,7 +21,18 @@
                                 item-value="value"
                                 return-object
                                 @change="selectQuestionnaireDropdown"
-                                class="ml-1 dropdown"
+                                class="ml-1 dropdown desktop-only"
+                                v-model="selectedQuestionnaire"
+                ></v-overflow-btn>
+
+                <v-overflow-btn dark
+                                label="More"
+                                :items="dropdownQuestionnairiesAll"
+                                item-text="text"
+                                item-value="value"
+                                return-object
+                                @change="selectQuestionnaireDropdown"
+                                class="ml-1 dropdown mobile-only"
                                 v-model="selectedQuestionnaire"
                 ></v-overflow-btn>
 
@@ -59,7 +71,17 @@
                             callback: () => this.selectQuestionnaireDropdown({value: element.id})
                         }
                     });
-            }
+            },
+            dropdownQuestionnairiesAll() {
+                return this.questionnairies
+                    .map((element) => {
+                        return {
+                            text: this.$options.filters.button_label(element),
+                            value: element.id,
+                            callback: () => this.selectQuestionnaireDropdown({value: element.id})
+                        }
+                    });
+            },
         },
         filters: {
             button_label(questionnaire) {

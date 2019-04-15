@@ -162,6 +162,8 @@ const getters = {
 
     getProducts: (state) => state.activeProductTypeId && state.products[state.activeProductTypeId] ? state.products[state.activeProductTypeId] : [],
 
+    getActiveQuestionnaire: (state) => state.activeQuestionnaireId,
+
     getActiveProductTypeId: (state) => state.activeProductTypeId
 };
 

@@ -45,9 +45,7 @@ nav.v-toolbar.theme--light {
     box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.2);
 }
 .questionnaire {
-    max-width: 500px;
-    margin: 0 auto 10px;
-    margin-top: 60px;
+    margin: 20px auto 10px;
 }
 .v-stepper__step, .v-stepper__step--active, .v-stepper__step--editable{
     &:hover {
@@ -92,4 +90,38 @@ nav.v-toolbar.theme--light {
     // max-width: 100px;
     // position: absolute;
     background: white;
+}
+
+
+.questionnaire {
+
+    .v-stepper {
+        box-shadow: none !important;
+        width: auto;
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .v-stepper__items {
+        width: auto;
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    .v-stepper__content {
+        width: 500px;
+        max-width: 100%;
+
+        &.questionnaire-results {
+            width: 800px;
+        }
+    }
+
+    .v-stepper__header {
+        max-width: 100%;
+        margin: 0 auto;
+        border-bottom: 1px solid #ccc !important
+    }
+
 }
