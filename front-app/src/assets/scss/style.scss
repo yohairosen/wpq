@@ -133,7 +133,11 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
         }
 
         &.active-questionnaire {
-            color: #5BF4A3 !important;
+            &:before {
+                background-color: currentColor;
+            }
+            background: transparent!important;
+            color: #606060!important;
         }
     }
 }
