@@ -26,7 +26,6 @@
                 ></v-overflow-btn>
 
                 <v-overflow-btn dark
-                                label="More"
                                 :items="dropdownQuestionnairiesAll"
                                 item-text="text"
                                 item-value="value"
@@ -101,6 +100,17 @@
             selectQuestionnaireDropdown(selected) {
                 this.selectQuestionnaire(selected.value, false)
             }
+        },
+        watch: {
+            '$store.state.activeQuestionnaireId': function (activeQuestionnaireId) {
+                var actQ = '';
+                this.questionnairies.forEach(function(obj) {
+                    if(obj.id === activeQuestionnaireId) {
+                        actQ = obj.button_label
+                    }
+                });
+                document.querySelectorAll('.mobile-only .v-select__selection.v-select__selection--comma')[0].textContent = actQ;
+            },
         }
     }
 </script>
