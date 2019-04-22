@@ -120,6 +120,9 @@ nav.v-toolbar.theme--light {
 
         &.questionnaire-results {
             width: 800px;
+            nav {
+                display: none;
+            }
         }
     }
 
@@ -131,4 +134,10 @@ nav.v-toolbar.theme--light {
         }
     }
 
+}
+
+.v-slider__thumb-container .v-slider__thumb {
+    transform: translateY(-50%) scale(1)!important;
+    background-color: #5BF4A3 !important;
+    border-color: #5BF4A3 !important;
 }
