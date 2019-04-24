@@ -167,7 +167,12 @@ $material-design-icons-font-path: '~material-design-icons-iconfont/dist/fonts/';
         color: #606060!important;
     }
 }
-
+.v-slider__thumb-label {
+    background-color: #5BF4A3 !important;
+}
+.v-toolbar__title {
+    white-space: normal!important;
+}
 .v-stepper__wrapper {
     .accent--text, .primary--text {
         color: #5BF4A3 !important;

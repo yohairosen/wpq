@@ -141,3 +141,7 @@ nav.v-toolbar.theme--light {
     background-color: #5BF4A3 !important;
     border-color: #5BF4A3 !important;
 }
+
+.v-stepper__step.v-stepper__step--inactive {
+    pointer-events: none!important;
+}
